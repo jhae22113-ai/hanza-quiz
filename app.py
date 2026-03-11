@@ -1,12 +1,12 @@
 import streamlit as st
 import random
 
-# [데이터 섹션] 교재 이미지 기반 1~52번 전체 데이터
+# [데이터 섹션] 1~52번 데이터 (기존과 동일)
 kanji_data = [
     {"kanji": "假", "mean": "거짓 가", "examples": [("假令", "가령", "가정해서 말하자면"), ("假熱", "가열", "실제 원인은 차가움인데 열인 것처럼 드러나는 증상")]},
     {"kanji": "嘉", "mean": "아름다울 가", "examples": [("喩嘉言", "유가언", "청나라 때의 한의학자"), ("嘉俳節", "가배절", "추석을 달리 이르는 말")]},
     {"kanji": "家", "mean": "집 가", "examples": [("道家", "도가", "노자와 장자 사상을 따르는 학파"), ("胃家", "위가", "위, 소장, 대장 등 소화기의 통칭")]},
-    {"kanji": "歌", "mean": "노래 가", "examples": [("穴性歌", "혈성가", "穴 자리와 그 성질을 외우기 쉽게 노래 형식으로 만든 것"), ("藥성歌", "약성가", "약의 성질과 효능을 외우기 쉽게 노래 형식으로 만든 것")]},
+    {"kanji": "歌", "mean": "노래 가", "examples": [("穴性歌", "혈성가", "穴 자리와 그 성질을 외우기 쉽게 노래 형식으로 만든 것"), ("藥性歌", "약성가", "약의 성질과 효능을 외우기 쉽게 노래 형식으로 만든 것")]},
     {"kanji": "街", "mean": "거리 가", "examples": [("氣街", "기가", "穴 자리 중의 한 종류"), ("街談巷說", "가담항설", "사람들 사이에 떠도는 이야기")]},
     {"kanji": "瘕", "mean": "뱃병 가", "examples": [("瘕聚", "가취", "뱃속의 덩어리"), ("血瘕", "혈가", "아랫배에 어혈이 뭉친 증상")]},
     {"kanji": "刻", "mean": "새길 각", "examples": [("百刻", "백각", "하루의 시간을 100등분한 옛 시간 단위"), ("一刻", "일각", "백각이 1,440분이므로 일각은 약 14.4분")]},
@@ -25,7 +25,7 @@ kanji_data = [
     {"kanji": "竭", "mean": "다할 갈", "examples": [("枯竭", "고갈", "말라서 없어짐"), ("精氣竭", "정기갈", "정기가 다 없어짐")]},
     {"kanji": "葛", "mean": "칡 갈", "examples": [("葛根", "갈근", "한약재 중의 한 종류"), ("葛藤", "갈등", "서로 상치되는 견해/처지 등으로 생기는 충돌")]},
     {"kanji": "坎", "mean": "구덩이 감", "examples": [("坎卦", "감괘", "주역의 팔괘 중의 하나"), ("坎方", "감방", "팔괘 배치도에서 감괘가 위치한 방향")]},
-    {"kanji": "感", "mean": "느낄 감", "examples": [("外感", "외감", "외부 환경에 의해 질병이 발생함"), ("相感", "상감", "서로 영향을 주고받음")]},
+    {"kanji": "感", "mean": "느낄 감", "examples": [("外感", "외감", "외부 환경에 의해 질병이 발생함"), ("상감", "상감", "서로 영향을 주고받음")]},
     {"kanji": "減", "mean": "덜 감", "examples": [("加減", "가감", "더함과 덜어냄"), ("減退", "감퇴", "줄어듦")]},
     {"kanji": "甘", "mean": "달 감", "examples": [("辛酸鹹苦甘", "신산함고감", "맵고 시고 짜고 쓰고 단 맛"), ("甘草", "감초", "한약재의 한 종류")]},
     {"kanji": "監", "mean": "볼 감", "examples": [("卑監", "비감", "운기학에서 土의 기운이 부족한 해"), ("監査", "감사", "보고 검사함")]},
@@ -34,7 +34,7 @@ kanji_data = [
     {"kanji": "剛", "mean": "굳셀 강", "examples": [("剛健", "강건", "마음이 곧고 뜻이 굳셈"), ("剛柔", "강유", "굳셈과 부드러움")]},
     {"kanji": "康", "mean": "평안할 강", "examples": [("健康", "건강", "병이 없이 좋은 기능을 가진 상태"), ("康命吉", "강명길", "조선 시대 한의학자")]},
     {"kanji": "强", "mean": "강할 강", "examples": [("虛實强弱", "허실강약", "허와 실의 강함과 약함"), ("項强", "항강", "목 뒤가 뻣뻣한 증상")]},
-    {"kanji": "江", "mean": "강 강", "examples": [("江河", "강하", "강과 하천"), ("江上", "강상", "강의 위")]},
+    {"kanji": "江", "mean": "강 강", "examples": [("江하", "강하", "강과 하천"), ("江上", "강상", "강의 위")]},
     {"kanji": "綱", "mean": "벼리 강", "examples": [("綱領", "강령", "어떤 일의 근본 원칙"), ("八綱", "팔강", "질병을 감별하는 여덟 가지 원칙")]},
     {"kanji": "腔", "mean": "속이 빌 강", "examples": [("胸腹腔", "흉복강", "가슴과 배 내부의 빈 공간"), ("體腔", "체강", "피부 안쪽 면과 장기 사이의 빈 공간")]},
     {"kanji": "薑", "mean": "생강 강", "examples": [("生薑", "생강", "한약재의 한 종류"), ("乾薑", "건강", "생강을 말린 것")]},
@@ -78,7 +78,6 @@ def main():
     if st.session_state.current_idx < 30:
         target_kanji = st.session_state.quiz_list[st.session_state.current_idx]
         
-        # 새 문제 세팅
         if not st.session_state.answered and st.session_state.target_ex is None:
             st.session_state.target_ex = random.choice(target_kanji['examples'])
             st.session_state.q_type = random.randint(1, 4)
@@ -87,21 +86,28 @@ def main():
         
         q_text = ""
         correct_ans = ""
-        
+        info_header = ""
+
+        # 질문 구성 및 출처 표시 로직
         if st.session_state.q_type == 1:
             q_text = f"한자 '{target_kanji['kanji']}'의 뜻과 음은?"
             correct_ans = target_kanji['mean']
+            info_header = f"📍 한자 문제"
         elif st.session_state.q_type == 2:
             q_text = f"용어 '{st.session_state.target_ex[0]}'의 의미는?"
             correct_ans = st.session_state.target_ex[2]
+            info_header = f"📍 용어 문제 (출처 한자: {target_kanji['kanji']} - {target_kanji['mean']})"
         elif st.session_state.q_type == 3:
-            q_text = f"한자 '{target_kanji['kanji']}'의 뜻과 음을 쓰세요."
+            q_text = f"한자 '{target_kanji['kanji']}'의 뜻과 음을 직접 쓰세요."
             correct_ans = target_kanji['mean']
+            info_header = f"📍 주관식 한자"
         else:
             q_text = f"용어 '{st.session_state.target_ex[0]}'의 한글 음은?"
             correct_ans = st.session_state.target_ex[1]
+            info_header = f"📍 주관식 용어 (출처 한자: {target_kanji['kanji']} - {target_kanji['mean']})"
 
-        st.info(f"질문: {q_text}")
+        st.info(info_header)
+        st.write(f"### {q_text}")
 
         if not st.session_state.answered:
             if st.session_state.q_type <= 2: # 객관식
@@ -115,16 +121,21 @@ def main():
                 
                 for opt in options:
                     if st.button(opt, key=opt, use_container_width=True):
-                        check_result(opt, correct_ans, q_text)
+                        check_result(opt, correct_ans, q_text, info_header)
             else: # 주관식
-                user_input = st.text_input("정답 입력 후 엔터를 치거나 아래 제출 버튼을 누르세요.", key=f"input_{st.session_state.current_idx}")
-                if st.button("제출", type="primary"):
-                    check_result(user_input, correct_ans, q_text)
+                user_input = st.text_input("정답 입력 후 엔터를 치거나 아래 버튼을 누르세요.", key=f"input_{st.session_state.current_idx}")
+                if st.button("제출", type="primary", use_container_width=True):
+                    check_result(user_input, correct_ans, q_text, info_header)
         else:
+            # 정답/오답 피드백
             if st.session_state.is_correct:
-                st.success("✅ 정답입니다!")
+                st.success(f"✨ 정답입니다! (정답: {correct_ans})")
             else:
                 st.error(f"❌ 틀렸습니다. 정답: {correct_ans}")
+            
+            # 용례일 경우 상세 설명 추가 표시
+            if st.session_state.q_type in [2, 4]:
+                st.write(f"📖 **'{st.session_state.target_ex[0]}'의 뜻:** {st.session_state.target_ex[2]}")
             
             if st.button("다음 문제로 ➡️", type="secondary", use_container_width=True):
                 st.session_state.current_idx += 1
@@ -140,13 +151,15 @@ def main():
             st.subheader("📝 오답 노트")
             for w in st.session_state.wrong_list:
                 with st.expander(f"Q: {w['q']}"):
-                    st.write(f"**정답:** {w['ans']}")
+                    st.write(f"**{w['header']}**")
+                    st.write(f"**나의 오답:** {w['user']}")
+                    st.write(f"**진짜 정답:** {w['ans']}")
         
         if st.button("🔄 처음부터 다시하기", use_container_width=True):
             st.session_state.clear()
             st.rerun()
 
-def check_result(user_val, correct_val, q_text):
+def check_result(user_val, correct_val, q_text, header_text):
     u = user_val.strip().replace(" ", "")
     c = correct_val.strip().replace(" ", "")
     st.session_state.answered = True
@@ -155,7 +168,12 @@ def check_result(user_val, correct_val, q_text):
         st.session_state.is_correct = True
     else:
         st.session_state.is_correct = False
-        st.session_state.wrong_list.append({"q": q_text, "ans": correct_val})
+        st.session_state.wrong_list.append({
+            "header": header_text,
+            "q": q_text, 
+            "ans": correct_val,
+            "user": user_val if user_val else "(미입력)"
+        })
     st.rerun()
 
 if __name__ == "__main__":
